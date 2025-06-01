@@ -1,0 +1,12 @@
+import pandas as pd
+
+# Load your 3 Excel files
+file1 = pd.read_excel('file1.xlsx')
+file2 = pd.read_excel('file2.xlsx')
+file3 = pd.read_excel('file3.xlsx')
+
+# Merge them vertically (stacked row-wise)
+merged = pd.concat([file1, file2, file3], axis=0, ignore_index=True)
+
+# Save the result
+merged.to_excel('merged_file.xlsx', index=False)
